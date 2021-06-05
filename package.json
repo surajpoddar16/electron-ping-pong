@@ -18,6 +18,10 @@
     "directories": {
       "buildResources": "src/assets"
     },
-    "files": ["src/"]
+    "files": ["src/"],
+    "extraResources": [
+      "workspaces.jar",
+      "config.yml"
+    ]
   }
 }
