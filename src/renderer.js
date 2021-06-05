@@ -10,6 +10,6 @@ function pingServer() {
 
 function renderPong(data) {
   return `
-  <img class="avatar" src="../assets/icon.png">
+  <img class="avatar" src="./assets/icon.png">
   `;
 }

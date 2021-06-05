@@ -16,10 +16,8 @@
   "build": {
     "appId": "com.workspace.pingpong",
     "directories": {
-      "buildResources": "assets"
+      "buildResources": "src/assets"
     },
-    "extraResources": [
-      "./assets/**"
-    ]
+    "files": ["src/"]
   }
 }
