@@ -1,7 +1,7 @@
 document.getElementById('ping-cta').addEventListener('click', pingServer);
 
 function pingServer() {
-  fetch('https://api.github.com/users/surajpoddar16')
+  fetch('http://localhost:8080/api/ping')
     .then(response => response.json())
     .then(data => {
       document.getElementById('pong-data').innerHTML = renderPong(data);
@@ -9,5 +9,5 @@ function pingServer() {
 }
 
 function renderPong(data) {
-  return `<img class="avatar mt-5" src="${data['avatar_url']}">`
+  return `${data.data['ping']}`
 }

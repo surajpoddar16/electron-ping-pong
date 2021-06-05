@@ -1,6 +1,7 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron');
 const path = require('path');
+const { spawn } = require('child_process');
 
 function createWindow() {
   // Create the browser window.
@@ -43,3 +44,22 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
+
+
+// Start backend server in a new child process
+
+console.log('Starting backend process');
+
+const backendProcess = spawn('java', ['-jar', 'workspaces.jar', 'server', 'config.yml']);
+
+backendProcess.stdout.on('data', (data) => {
+  console.log(`backend: stdout: ${data}`);
+});
+
+backendProcess.stderr.on('data', (data) => {
+  console.error(`backend: stderr: ${data}`);
+});
+
+backendProcess.on('close', (code) => {
+  console.log(`backend process exited with code ${code}`);
+});
