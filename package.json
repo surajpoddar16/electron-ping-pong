@@ -1,0 +1,14 @@
+{
+  "name": "workspace-ping-pong",
+  "version": "1.0.0",
+  "description": "Ping Backend Server",
+  "main": "src/main.js",
+  "author": "Suraj Poddar",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron ./src/main.js"
+  },
+  "devDependencies": {
+    "electron": "^13.1.1"
+  }
+}
