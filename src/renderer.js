@@ -9,5 +9,7 @@ function pingServer() {
 }
 
 function renderPong(data) {
-  return `${data.data['ping']}`
+  return `
+  <img class="avatar" src="../assets/icon.png">
+  `;
 }

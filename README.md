@@ -36,3 +36,10 @@ in `src/renderer.js` replace argument of [fetch](https://developer.mozilla.org/e
 By default this points to the backend server ping pong api.
 
 use `renderPong` method to return html to be rendered in pong response.
+
+### Packaging the application
+
+Run the following command
+```shell script
+npm run dist
+```
