@@ -3,6 +3,8 @@ const {app, BrowserWindow} = require('electron');
 const path = require('path');
 const {startBackendProcess} = require('./backend');
 
+startBackendProcess();
+
 function createWindow() {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
@@ -14,7 +16,9 @@ function createWindow() {
   });
 
   // and load the index.html of the app.
-  mainWindow.loadURL(`file://${__dirname}/index.html`);
+  setTimeout(() => {
+    mainWindow.loadURL(`http://localhost:8080`);
+  }, 3000);
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()
@@ -44,7 +48,3 @@ app.on('window-all-closed', function () {
 
 // In this file you can include the rest of your app's specific main process
 // code. You can also put them in separate files and require them here.
-
-
-// Start backend server in a new child process
-startBackendProcess();
